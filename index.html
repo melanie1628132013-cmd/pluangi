@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApexSmart - Intelligent Home Automation</title>
+    <meta name="description" content="ApexSmart delivers seamless home automation for lighting, security, and climate control.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --cor-principal: #005A9C; /* Azul Corporativo Moderno */
+            --cor-secundaria: #1a2938; /* Azul Escuro */
+            --cor-acento: #FFB600; /* Amarelo/Dourado (Energia) */
+            --cor-texto: #333;
+            --cor-fundo: #f9f9f9;
+            --fonte-titulo: 'Montserrat', sans-serif;
+            --fonte-corpo: 'Lato', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--fonte-corpo); color: var(--cor-texto); line-height: 1.7; background-color: #fff; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        h1, h2, h3 { font-family: var(--fonte-titulo); color: var(--cor-secundaria); margin-bottom: 20px; font-weight: 700; }
+        h2 { font-size: 2.5rem; text-align: center; }
+        p { margin-bottom: 15px; font-size: 1.1rem; color: #555; }
+        .cta-button { display: inline-block; background-color: var(--cor-acento); color: var(--cor-secundaria); padding: 14px 28px; text-decoration: none; font-weight: bold; border-radius: 5px; transition: all 0.3s ease; }
+        .cta-button:hover { background-color: #ffc933; transform: translateY(-3px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .header { background-color: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 15px 0; position: sticky; top: 0; z-index: 1000; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: var(--fonte-titulo); font-size: 1.8rem; font-weight: 700; color: var(--cor-principal); text-decoration: none; }
+        .nav-links { list-style: none; display: flex; }
+        .nav-links li { margin-left: 30px; }
+        .nav-links a { text-decoration: none; color: var(--cor-secundaria); font-weight: 700; position: relative; padding-bottom: 5px; }
+        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: var(--cor-principal); transition: width 0.3s ease; }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+        .menu-toggle { display: none; font-size: 1.5rem; color: var(--cor-principal); cursor: pointer; }
+        #hero { height: 90vh; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; background: linear-gradient(rgba(26, 41, 56, 0.7), rgba(26, 41, 56, 0.7)), url('https://images.unsplash.com/photo-1588497835824-3d55c8b37370?auto=format&fit=crop&q=80&w=2070'); background-size: cover; background-position: center; padding: 0 20px; }
+        .hero-content h1 { font-size: 3.5rem; color: #fff; margin-bottom: 10px; }
+        .hero-content p { font-size: 1.3rem; margin-bottom: 30px; font-weight: 400; color: #f0f0f0; }
+        .section { padding: 80px 0; }
+        .section-light { background-color: var(--cor-fundo); }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        .service-card { background-color: #fff; padding: 30px; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease; }
+        .service-card:hover { transform: translateY(-10px); }
+        .service-card i { font-size: 3rem; color: var(--cor-principal); margin-bottom: 20px; }
+        .service-card h3 { font-size: 1.5rem; }
+        .footer { background-color: var(--cor-secundaria); color: #ccc; padding: 60px 0 20px 0; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-col h4 { font-family: var(--fonte-titulo); font-size: 1.3rem; color: #fff; margin-bottom: 20px; position: relative; padding-bottom: 10px; }
+        .footer-col h4::after { content: ''; position: absolute; bottom: 0; left: 0; width: 40px; height: 2px; background-color: var(--cor-acento); }
+        .footer-col p, .footer-col li { margin-bottom: 10px; color: #ccc; }
+        .footer-col ul { list-style: none; }
+        .footer-col a { color: #ccc; text-decoration: none; transition: color 0.3s ease; }
+        .footer-col a:hover { color: var(--cor-acento); }
+        .footer-col .icon-text { display: flex; align-items: flex-start; gap: 10px; }
+        .footer-col .icon-text i { margin-top: 5px; color: var(--cor-acento); width: 20px; text-align: center; }
+        .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid #444; font-size: 0.9rem; color: #aaa; }
+        .footer-bottom a { color: #ccc; text-decoration: none; }
+        .footer-bottom a:hover { text-decoration: underline; }
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+            .nav-links { position: absolute; top: 70px; right: 0; width: 100%; background-color: #fff; flex-direction: column; text-align: center; box-shadow: 0 5px 10px rgba(0,0,0,0.1); max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; }
+            .nav-links.nav-active { max-height: 300px; }
+            .nav-links li { margin: 0; }
+            .nav-links a { display: block; padding: 15px; border-bottom: 1px solid #f0f0f0; }
+            #hero { height: 70vh; }
+            .hero-content h1 { font-size: 2.5rem; }
+            .hero-content p { font-size: 1.1rem; }
+            .footer-content { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container navbar">
+            <a href="index.html" class="logo">ApexSmart</a>
+            <nav>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h1>The Future of Living, Simplified.</h1>
+                <p>Welcome to ApexSmart. We design and install intuitive smart home systems that put control, comfort, and security at your fingertips.</p>
+                <a href="contact.html" class="cta-button">Get a Free Consultation</a>
+            </div>
+        </section>
+
+        <section id="home-about" class="section">
+            <div class="container" style="text-align: center; max-width: 900px;">
+                <h2>Your Home, Only Smarter.</h2>
+                <p>ApexSmart isn't just about gadgets; it's about creating a responsive living environment. We believe technology should make your life easier, not more complicated. Our team of experts provides end-to-end solutions, from design to installation, ensuring a system that is powerful, reliable, and simple to use.</p>
+                <a href="about.html" class="cta-button" style="background-color: var(--cor-principal); color: #fff;">Learn More About Us</a>
+            </div>
+        </section>
+
+        <section id="home-services" class="section section-light">
+            <div class="container">
+                <h2>Our Core Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>Smart Lighting</h3>
+                        <p>Create the perfect ambiance for any occasion. Control every light in your home from your phone, with your voice, or via automated schedules.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Intelligent Security</h3>
+                        <p>Peace of mind, 24/7. Integrate smart locks, motion sensors, and high-definition cameras that you can monitor from anywhere in the world.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-thermometer-half"></i>
+                        <h3>Climate Control</h3>
+                        <p>Optimize your comfort and save on energy bills. Smart thermostats learn your schedule and adjust the temperature automatically.</p>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="services.html" class="cta-button">View All Services</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>ApexSmart</h4>
+                    <p>Connecting your home to your life. We provide professional home automation consulting and installation.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Use</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Get in Touch</h4>
+                    <ul>
+                        <li class="icon-text">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>São Paulo/SP, Brazil</span>
+                        </li>
+                        <li class="icon-text">
+                            <i class="fas fa-envelope"></i>
+                            <span>contact@apexsmart.com</span>
+                        </li>
+                        <li class="icon-text">
+                            <i class="fas fa-clock"></i>
+                            <span>Mon - Fri, 9:00 AM - 6:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ApexSmart. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('nav-active');
+        });
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if(navLinks.classList.contains('nav-active')) {
+                    navLinks.classList.remove('nav-active');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

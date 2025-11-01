@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Use | ApexSmart</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --cor-principal: #005A9C; /* Azul Corporativo Moderno */
+            --cor-secundaria: #1a2938; /* Azul Escuro */
+            --cor-acento: #FFB600; /* Amarelo/Dourado (Energia) */
+            --cor-texto: #333;
+            --cor-fundo: #f9f9f9;
+            --fonte-titulo: 'Montserrat', sans-serif;
+            --fonte-corpo: 'Lato', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--fonte-corpo); color: var(--cor-texto); line-height: 1.7; background-color: #fff; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        h1, h2, h3 { font-family: var(--fonte-titulo); color: var(--cor-secundaria); margin-bottom: 20px; font-weight: 700; }
+        h2 { font-size: 2.5rem; text-align: center; }
+        p { margin-bottom: 15px; font-size: 1.1rem; color: #555; }
+        .header { background-color: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 15px 0; position: sticky; top: 0; z-index: 1000; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: var(--fonte-titulo); font-size: 1.8rem; font-weight: 700; color: var(--cor-principal); text-decoration: none; }
+        .nav-links { list-style: none; display: flex; }
+        .nav-links li { margin-left: 30px; }
+        .nav-links a { text-decoration: none; color: var(--cor-secundaria); font-weight: 700; position: relative; padding-bottom: 5px; }
+        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: var(--cor-principal); transition: width 0.3s ease; }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+        .menu-toggle { display: none; font-size: 1.5rem; color: var(--cor-principal); cursor: pointer; }
+        .footer { background-color: var(--cor-secundaria); color: #ccc; padding: 60px 0 20px 0; margin-top: 40px; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-col h4 { font-family: var(--fonte-titulo); font-size: 1.3rem; color: #fff; margin-bottom: 20px; position: relative; padding-bottom: 10px; }
+        .footer-col h4::after { content: ''; position: absolute; bottom: 0; left: 0; width: 40px; height: 2px; background-color: var(--cor-acento); }
+        .footer-col p, .footer-col li { margin-bottom: 10px; color: #ccc; }
+        .footer-col ul { list-style: none; }
+        .footer-col a { color: #ccc; text-decoration: none; transition: color 0.3s ease; }
+        .footer-col a:hover { color: var(--cor-acento); }
+        .footer-col .icon-text { display: flex; align-items: flex-start; gap: 10px; }
+        .footer-col .icon-text i { margin-top: 5px; color: var(--cor-acento); width: 20px; text-align: center; }
+        .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid #444; font-size: 0.9rem; color: #aaa; }
+        .footer-bottom a { color: #ccc; text-decoration: none; }
+        .footer-bottom a:hover { text-decoration: underline; }
+        .page-header { background-color: var(--cor-fundo); padding: 40px 0; text-align: center; border-bottom: 1px solid #eee; }
+        .page-header h1 { font-size: 3rem; color: var(--cor-principal); margin: 0; }
+        .section { padding: 80px 0; }
+        .legal-content { max-width: 900px; margin: 0 auto; }
+        .legal-content h3 { font-size: 1.5rem; margin-top: 30px; }
+        .legal-content ul { list-style: inside; margin-left: 20px; margin-bottom: 15px; }
+        .legal-content li { font-size: 1.1rem; color: #555; }
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+            .nav-links { position: absolute; top: 70px; right: 0; width: 100%; background-color: #fff; flex-direction: column; text-align: center; box-shadow: 0 5px 10px rgba(0,0,0,0.1); max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; }
+            .nav-links.nav-active { max-height: 300px; }
+            .nav-links li { margin: 0; }
+            .nav-links a { display: block; padding: 15px; border-bottom: 1px solid #f0f0f0; }
+            .footer-content { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container navbar">
+            <a href="index.html" class="logo">ApexSmart</a>
+            <nav>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Terms of Use</h1>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container legal-content">
+                <p><strong>Last Updated: November 1, 2025</strong></p>
+                <p>Please read these Terms of Use ("Terms", "Terms of Use") carefully before using this website (the "Service") operated by ApexSmart ("us", "we", or "our").</p>
+                <p>Your access to and use of the Service is conditioned on your acceptance of and compliance with these Terms. These Terms apply to all visitors, users, and others who access or use the Service.</p>
+                
+                <h3>Intellectual Property</h3>
+                <p>The Service and its original content, features, and functionality are and will remain the exclusive property of ApexSmart and its licensors. The Service is protected by copyright, trademark, and other laws of both Brazil and foreign countries. Our trademarks may not be used in connection with any product or service without the prior written consent of ApexSmart.</p>
+
+                <h3>Use of Site</h3>
+                <p>This website is provided for informational purposes about our home automation services. You agree not to use the site in a way that may impair its performance, corrupt the content, or otherwise reduce the overall functionality of the website. You also agree not to compromise the security of the website or attempt to gain access to secured areas or sensitive information.</p>
+
+                <h3>Limitation of Liability</h3>
+                <p>In no event shall ApexSmart, nor its directors, employees, or partners, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from (i) your access to or use of or inability to access or use the Service; (ii) any conduct or content of any third party on the Service; (iii) any content obtained from the Service.</p>
+
+                <h3>Disclaimer</h3>
+                <p>Your use of the Service is at your sole risk. The Service is provided on an "AS IS" and "AS AVAILABLE" basis. The Service is provided without warranties of any kind, whether express or implied, including, but not limited to, implied warranties of merchantability or fitness for a particular purpose.</p>
+
+                <h3>Governing Law</h3>
+                <p>These Terms shall be governed and construed in accordance with the laws of Brazil, without regard to its conflict of law provisions.</p>
+
+                <h3>Contact Us</h3>
+                <p>If you have any questions about these Terms, please contact us by visiting the contact page on our website.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>ApexSmart</h4>
+                    <p>Connecting your home to your life. We provide professional home automation consulting and installation.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Use</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Get in Touch</h4>
+                    <ul>
+                        <li class="icon-text">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>São Paulo/SP, Brazil</span>
+                        </li>
+                        <li class="icon-text">
+                            <i class="fas fa-envelope"></i>
+                            <span>contact@apexsmart.com</span>
+                        </li>
+                        <li class="icon-text">
+                            <i class="fas fa-clock"></i>
+                            <span>Mon - Fri, 9:00 AM - 6:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ApexSmart. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('nav-active');
+        });
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if(navLinks.classList.contains('nav-active')) {
+                    navLinks.classList.remove('nav-active');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
